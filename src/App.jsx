@@ -177,15 +177,16 @@ function App() {
         </div>
       )}
 
-      {logado && (
-        <div className="login-page">
-          <div className="welcome-card">
-            <span className="brand-mark">EO</span>
-            <h2>Bem-vindo ao sistema!</h2>
-            <button className="btn btn-logout" onClick={sair}>Sair</button>
-          </div>
-        </div>
-      )}
+     {logado && (
+  <div className="login-page">
+    <div className="welcome-card">
+      <span className="brand-mark">EO</span>
+      <h2>Bem-vindo ao sistema!</h2>
+      <a className="btn" href="https://eventos-manager.netlify.app">Acessar o sistema</a>
+      <button className="btn btn-logout" onClick={sair}>Sair</button>
+    </div>
+  </div>
+)}
     </>
   )
 }
