@@ -183,7 +183,7 @@ function App() {
       <span className="brand-mark">EO</span>
       <h2>Bem-vindo ao sistema!</h2>
       <a className="btn" href="https://eventos-manager.netlify.app">Acessar o sistema</a>
-      <button className="btn btn-logout" onClick={sair}>Sair</button>
+      <button className="btn ghost btn-logout" onClick={sair}>Sair</button>
     </div>
   </div>
 )}
