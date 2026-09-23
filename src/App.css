@@ -1,0 +1,208 @@
+/*
+  Estilos do login/cadastro do EventOS.
+  Usa os tokens do :root de assets/css/style.css (--orange, --ink, --panel, --text, --muted, --line).
+  Os valores depois da vírgula só valem se o token não existir.
+*/
+
+/* Botões do header */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Fundo escurecido atrás dos formulários */
+.auth-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  padding: 20px;
+  overflow-y: auto;
+  background: rgba(5, 3, 9, 0.8);
+  backdrop-filter: blur(6px);
+}
+
+.auth-modal {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  margin: auto;
+}
+
+.auth-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted, #a59fb0);
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.auth-close:hover {
+  color: var(--text, #f3efe8);
+  background: var(--line, rgba(255, 255, 255, 0.1));
+}
+
+.auth-close:focus-visible,
+.auth-form input:focus-visible {
+  outline: 2px solid var(--orange, #ff5a1f);
+  outline-offset: 2px;
+}
+
+/* Aviso "Você já possui uma conta!" */
+.login-notice {
+  margin: 0 0 12px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--orange, #ff5a1f) 40%, transparent);
+  background: color-mix(in srgb, var(--orange, #ff5a1f) 14%, transparent);
+  color: var(--text, #f3efe8);
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Cartão do formulário */
+.auth-card {
+  padding: 36px 28px 28px;
+  border-radius: 16px;
+  border: 1px solid var(--line, rgba(255, 255, 255, 0.1));
+  background: var(--panel, #120e18);
+  color: var(--text, #f3efe8);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+}
+
+.auth-card h2 {
+  margin: 0 0 6px;
+  font-family: 'Anton', sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  letter-spacing: 0.01em;
+}
+
+.auth-subtitle {
+  margin: 0 0 24px;
+  color: var(--muted, #a59fb0);
+  font-size: 15px;
+}
+
+.auth-form {
+  display: grid;
+  gap: 16px;
+}
+
+.auth-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.auth-form input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--line, rgba(255, 255, 255, 0.1));
+  background: var(--ink, #07050b);
+  color: var(--text, #f3efe8);
+  font: inherit;
+}
+
+.auth-form input::placeholder {
+  color: var(--muted, #a59fb0);
+  opacity: 0.7;
+}
+
+.auth-form input:focus-visible {
+  border-color: var(--orange, #ff5a1f);
+}
+
+/* Usa o .btn da landing; aqui só ajusta para ocupar a largura do formulário */
+.auth-form button.btn {
+  width: 100%;
+  margin-top: 4px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Tela depois do login */
+.login-page {
+  min-height: calc(100vh - 64px);
+  display: grid;
+  place-items: center;
+  padding: 48px 20px;
+}
+
+.welcome-card {
+  width: 100%;
+  max-width: 420px;
+  display: grid;
+  justify-items: center;
+  gap: 16px;
+  padding: 40px 28px;
+  border-radius: 16px;
+  border: 1px solid var(--line, rgba(255, 255, 255, 0.1));
+  background: var(--panel, #120e18);
+  color: var(--text, #f3efe8);
+  text-align: center;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+}
+
+.welcome-card h2 {
+  margin: 0;
+  font-family: 'Anton', sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: var(--orange, #ff5a1f);
+  color: var(--ink, #07050b);
+  font-family: 'Anton', sans-serif;
+  font-size: 24px;
+}
+
+.btn-logout {
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Sem os links do menu (celular/tablet), os botões vão para a direita */
+@media (max-width: 900px) {
+  .nav-actions {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 520px) {
+  .nav .wrap {
+    gap: 12px;
+  }
+
+  .nav-actions {
+    gap: 8px;
+  }
+
+  .nav-actions .btn {
+    padding: 8px 10px;
+    font-size: 13.5px;
+    white-space: nowrap;
+  }
+}
